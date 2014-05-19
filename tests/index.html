@@ -3,21 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EET Tests</title>
+    <title>Eet Tests</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-      window.ENV = {{ENV}};
-      document.write('<base href="' + ENV.rootURL + '" />');
-    </script>
+    {{BASE_TAG}}
 
     <link rel="stylesheet" href="assets/app.css">
     <link rel="stylesheet" href="assets/qunit.css">
-
-    <script src="assets/app.js"></script>
-    <script src="assets/tests.js"></script>
-
     <style>
       #ember-testing-container {
         position: absolute;
@@ -38,6 +31,13 @@
   <body>
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
+
+    <script>
+      window.ENV = {{ENV}};
+    </script>
+    <script src="assets/qunit.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="testem.js"></script>
     <script>
       require('eet/tests/test-helper');
       require('eet/tests/test-loader');

@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>EET</title>
+    <title>Eet</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-      window.ENV = {{ENV}};
-      document.write('<base href="' + ENV.rootURL + '" />');
-    </script>
+    {{BASE_TAG}}
 
     <link rel="stylesheet" href="assets/app.css">
-    <script src="assets/app.js"></script>
   </head>
   <body>
     <script>
-      window.EET = require('eet/main')['default']('eet');
+      window.ENV = {{ENV}};
+    </script>
+    <script src="assets/app.js"></script>
+    <script>
+      window.Eet = require('eet/app')['default'].create(ENV.APP);
     </script>
   </body>
 </html>
